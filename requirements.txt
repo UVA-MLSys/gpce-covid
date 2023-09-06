@@ -1,0 +1,13 @@
+pip>=23.1.2
+setuptools>=66.0
+# torch and cuda needs to be installed separately
+# torch==1.13.1+cu117 -f https://download.pytorch.org/whl/torch_stable.html 
+tensorflow==2.10.*
+pytorch-lightning==1.8.6
+pytorch-forecasting==0.10.3
+matplotlib>=3.6.3
+numpy<1.24
+darts >= 0.22
+# pandas==1.5.3 
+# scikit-learn>=1.0.2
+# tqdm>=4.64.0
