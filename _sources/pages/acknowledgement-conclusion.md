@@ -4,3 +4,5 @@ Our model has creatively incorporated spatial factors at county level, and such 
 
 ## Acknowledgement
 This work is partially supported by NSF grant CCF-1918626  Expeditions: Collaborative  Research: Global Pervasive Computational Epidemiology, and NSF Grant 1835631 for CINES: A Scalable Cyberinfrastructure for Sustained Innovation in Network Engineering and Science.
+
+<img src="../images/National-Science-Foundation-logo.jpg" width="250">
