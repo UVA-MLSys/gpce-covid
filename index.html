@@ -1,1 +1,417 @@
-<meta http-equiv="Refresh" content="0; url=pages/introduction.html" />
+<!doctype html>
+<html>
+
+<head>
+  <title>Interpreting County-Level COVID-19 Infections using Transformer and Deep Learning Time Series Models</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <!-------------------------------------------------------------------------------------------->
+    <!--Start Header-->
+    <div class="banner" style="background: url('img/corona_1.jpg') no-repeat center; background-size: cover; height: 300px;"></div>
+    <div class="banner">
+      <div class="banner-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small"></h2>
+            <p class="text">
+             
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Header-->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Intro-->
+        
+       
+        <!--End Intro-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text Only-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="text-only">Introduction</h2>
+            <hr>
+            <p class="text">
+              In this work, we utilize the Temporal Fusion Transformer (TFT) 
+              to achieve state-of-the-art performance in forecasting US county-level 
+              infections while enabling new forms of interpretability through analyzing complex 
+              spatiotemporal patterns. The proposed model (1) outperforms other popular deep learning models in all 
+              evaluation metrics for multivariate multi-horizon forecasting, (2) exhibits robust performance in predicting non-stationary trends of the 
+              infections at different waves of the COVID-19 pandemic, (3) interprets temporal patterns, such as weekly and holiday seasonality in reported cases, through 
+              multi-head attention weights, and (4) reveals spatial patterns using attention weights that are correlated to the infection spread. 
+              The model performs consistently across different counties, despite the large variation in infection rates, and can be easily 
+              extended to other datasets at the community level, as exemplified in the characteristics (e.g. population, health status, and 
+              socioeconomic factors).
+            </p>
+
+            <h2 id="text-only">Folder Structure</h2>
+            <ul>
+              <li><strong>Archives</strong>: Unused codes.</li>
+              <li><strong>dataset_raw</strong>: Contains the collected raw dataset and the supporting files. To update use the <a href="/dataset_raw/Update%20dynamic%20features.ipynb">Update dynamic dataset</a> notebook. The static dataset is already updated till the onset of COVID-19 using <a href="/dataset_raw/Update%20static%20features.ipynb">Update static dataset</a> notebook.</li>
+              <li><strong>papers</strong>: Related papers.</li>
+              <li><strong>Related Works</strong>: Contains the models and results used to compare the TFT performance with related works.</li>
+              <li><strong>TFT-PyTorch</strong>: Contains all codes and merged feature files used during the TFT experimentation setup and interpretation. For more details, check the <a href="/TFT-PyTorch/README.md">README.md</a> file inside it. The primary results are highlighted in <a href="/TFT-PyTorch/results.md">results.md</a>.</li>
+            </ul>
+
+            <h2>How to Reproduce</h2>
+
+            <p>
+              For detailed instructions on how to reproduce, follow the <a href="/Reproduce.md">Reproduce.md</a> file. In summary, it includes the following steps:
+            </p>
+            
+            <ul>
+              <li>Getting the env ready
+                <ul>
+                  <li>From scratch using Anaconda or pip and installing libraries using <a href="/requirements.txt">requirements.txt</a>.</li>
+                  <li>Creating the containers (<code>Singularity</code> or <code>Docker</code>). Definitions are given in <a href="/singularity.def">singularity.def</a> and <a href="/Dockerfile">Dockerfile</a>. An already created <code>Singularity</code> container is hosted <a href="library://khairulislam/collection/tft_pytorch:latest">here</a>.</li>
+                </ul>
+              </li>
+              <li>To reproduce tft experiments run the <a href="/TFT-pytorch/script/">scripts</a> in the <a href="/TFT-pytorch">TFT-pytorch</a> folder.</li>
+              <li>For the related works comparison run the scripts from <a href="/Related%20Works/">Related Works</a> folder.</li>
+              <li>Note that, for Python path management, the scripts have to be run from their corresponding folder (not from this root).</li>
+              <li>The are some notebooks available for most scripts too for easier debugging.</li>
+            </ul>
+
+
+            <h2 id="text-only">Results</h2>
+            <p class="text">
+              Click the link below to view an interactive graph of the results for 3,142 US counties.
+            </p>
+            <a class="link" href="embedding.html">Link to Interactive Graph</a>
+            
+            <h3>Ground Truth and Benchmark</h3>
+
+            
+
+
+
+
+
+
+          </div>
+        </div>
+        <!--End Text Only-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Buttons-->
+       
+        <!--End Text with Buttons-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Images and Image buttons-->
+
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="images-and-image-button"></h2>
+            <hr>
+            <p class="text">
+             
+            </p>
+          </div>
+        </div>
+        <div class="flex-row-space-between">
+          <div class="flex-item flex-column">
+            <img class="image max-width-400" src="img/ground_truth.jpg">
+            <p class="image-caption">Ground Truth</p>
+          </div>
+          <div class="flex-item flex-column">
+            
+              <img class=customimage3 src="img/Test_comparison.jpg">
+            </a>
+            <p class="customimage-caption">Test result comparison of TFT with 
+            five other deep learning models.</p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text">
+             
+            </p>
+          </div>
+        </div>
+
+        <h3>Temporal Patterns</h3>
+        <p> Time series data typically exhibit various temporal patterns,
+        such as trend, seasonal, and cyclic patterns. Here we investigate how well our TFT model can learn and interpret these patterns by conducting
+        experiments on data with these patterns.</p>
+
+
+
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="images-and-image-button"></h2>
+            <hr>
+            <p class="text">
+             
+            </p>
+          </div>
+        </div>
+        <div class="flex-row-space-between">
+          <div class="flex-item flex-column">
+            <img class="customimage4" src="img/Train_attention.jpg">
+            <p class="customimage-caption">
+              Attention weights aggregated by past time index showing 
+              high importance in the `same day the 
+              previous week` (position index -7).</p>
+          </div>
+          <div class="flex-item flex-column">
+              <img class="customimage2" src="img/seasonal_pattern.jpg">
+            </a>
+            <p class="customimage-caption">
+              Weekly `seasonality` due to reporting calculated 
+              using auto-correlation at different lag 
+              days $k \in [1, 21]$. Our analysis shows a 
+              clear weekly periodicity, where the correlation
+               peaks at lag day k = 7.  This is attributed to 
+               the weekly reporting style from hospitals, leading 
+               to fewer reported cases on weekends.</p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text">
+             
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Cyclic holiday patterns (Thanksgiving, Christmas). During holidays, hospitals and COVID-19 test centers often have reduced staffing and operating hours, leading to fewer tests and reported cases. Leading to a drop in attention for those days. 
+        </p>
+        <img class="image center max-width-400 add-top-margin-small" src="img/holiday_pattern.jpg">
+
+        <p>
+          Trend: TFT model's test performance on all US counties for additional data splits learning different infection trends. 
+        </p>
+        <img class="customimage1" src="img/Test_splits.jpg">
+
+
+<h3>Spatial Patterns</h3>
+
+
+
+
+<div class="flex-row">
+  <div class="flex-item flex-column">
+    <h2 id="images-and-image-button"></h2>
+    <hr>
+    <p class="text">
+     
+    </p>
+  </div>
+</div>
+<div class="flex-row-space-between">
+  <div class="flex-item flex-column">
+    <img class="image max-width-400" src="img/cases_quantiles.jpg">
+    <p class="image-caption">Cumulative COVID-19 cases across US counties</p>
+  </div>
+  <div class="flex-item flex-column">
+    <a href="https://github.com/yenchiah/project-website-template" target="_blank" class="image max-width-400">
+      <img src="img/attention_quantiles.jpg">
+    </a>
+    <p class="image-caption">Avg. attention weights across US counties from TFT</p>
+  </div>
+</div>
+<div class="flex-row">
+  <div class="flex-item flex-column">
+    <p class="text">
+     
+    </p>
+  </div>
+</div>
+
+
+<h2>Features</h2>      
+
+<p>
+  Note that, past values of the target and known futures are also used as observed inputs by TFT.
+</p>
+
+<div align="center">
+
+  <table border="1px">
+  <caption> <h2>Details of Features </h2> </caption>
+  <thead style="border:1px solid">
+  <tr>
+  <th>Feature</th>
+  <th>Type</th>
+  <th>Update Frequency</th>
+  <th>Description/Rationale</th>
+  <th>Source(s)</th>
+  </tr>
+  
+  </thead>
+  <tbody>
+  <tr>
+  <td><strong>Age Distribution</strong> <br> (% age 65 and over)</td>
+  <td rowspan="2">Static</td>
+  <td rowspan="2">Once</td>
+  <td><em>Aged 65 or Older from 2016-2020 American Community Survey (ACS)</em>. Older ages have been associated with more severe outcomes from COVID-19 infection.</td>
+  <td><span><a href="https://svi.cdc.gov/data-and-tools-download.html" target="_blank">2020 SVI</a></span></td>
+  </tr>
+  
+  <trstyle="border:1px solid">
+  <td><strong>Health Disparities</strong> <br>(Uninsured)</td>
+  <td><em>Percentage uninsured in the total civilian noninstitutionalized population estimate, 2016- 2020 ACS</em>. Individuals without insurance are more likely to be undercounted in infection statistics, and may have more severe outcomes due to lack of treatment.</td>
+  <td><span><a href="https://svi.cdc.gov/data-and-tools-download.html" target="_blank">2020 SVI</a></span></td>
+  </tr>
+  
+  <tr>
+  <td><strong>Transmissible Cases</strong></td>
+  <td rowspan="4">Observed</td>
+  <td rowspan="7">Daily</td>
+  <td><em>Cases from the last 14 days per 100k population</em>. Because of the 14-day incubation period, the cases identified in that time period are the most likely to be transmissible. This metric is the number of such "contagious" individuals relative to the population, so a greater number indicates a more likely continued spread of disease.</td>
+  <td><span><span><a href="https://usafacts.org/issues/coronavirus/" target="_blank">USA Facts</a> , <a href="https://svi.cdc.gov/data-and-tools-download.html" target="_blank">2020 SVI</a> (for population estimate)</span></span></td>
+  </tr>
+  
+  <tr>
+  <td><strong>Disease Spread</strong></td>
+  <td><em>Cases that are from the last 14 days (one incubation period) divided by cases from the last 28 days </em>. Because COVID-19 is thought to have an incubation period of about 14 days, only a sustained decline in new infections over 2 weeks is sufficient to signal a reduction in disease spread. This metric is always between 0 and 1, with values near 1 during the exponential growth phase, and declining linearly to zero over 14 days if there are no new infections.</td>
+  <td><span><span><a href="https://usafacts.org/issues/coronavirus/" target="_blank">USA Facts</a></span></span></td>
+  </tr>
+  
+  <tr>
+  <td><strong>Social Distancing</strong></td>
+  <td><em>Unacast social distancing scoreboard grade is assigned by looking at the change in overall distance traveled and the change in nonessential visits relative to baseline (previous year), based on cell phone mobility data</em>. The grade is converted to a numerical score, with higher values being less social distancing (worse score) is expected to increase the spread of infection because more people are interacting with other.</td>
+  <td><span><a href="https://www.unacast.com/covid19/social-distancing-scoreboard" target="_blank">Unacast</a></span></td>
+  </tr>
+  
+  <tr>
+  <td><strong>Vaccination Full Dose</strong><br>(Series_Complete_Pop_Pct)</td>
+  <td> Percent of people who are fully vaccinated (have a second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county where the recipient lives.</td>
+  <td><span><a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh" target="_blank">CDC</a></span></td>
+  </tr>
+  
+  <tr>
+  <td><strong>SinWeekly</strong></td>
+  <td rowspan="2">Known Future</td>
+  <td> <em>Sin (day of the week / 7) </em>.</td>
+  <td rowspan="2">Date</td>
+  </tr>
+  
+  <tr>
+  <td><strong>CosWeekly</strong></td>
+  <td> <em>Cos (day of the week / 7) </em>.</td>
+  </tr>
+  
+  <tr>
+  <td><strong>Case</strong></td>
+  <td>Target</td>
+  <td> COVID-19 infection at county level.</td>
+  <td><span><a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/" target="_blank">USA Facts</a></span></td>
+  </tr>
+  </tbody>
+  </table>
+  
+  </div>
+  
+  <h2>Contribute</h2>
+  <ul>
+    <li>Please do not add temporarily generated files in this repository.</li>
+    <li>Make sure to clean your temp files before pushing any commits.</li>
+    <li>In the .gitignore file you will find some paths in this directory are excluded from git tracking. So if you create anything in those folders, they won't be tracked by git.
+      <ul>
+        <li>To check which files git says untracked: <code>git status -u</code>.</li>
+        <li>If you have folders you want to exclude, add the path in <code>.gitignore</code>, then <code>git add .gitignore</code>. Check again with <code>git status -u</code> if it is still being tracked.</li>
+      </ul>
+    </li>
+  </ul>
+
+  
+  <h2>Citation</h2>
+
+  <p class="cite">
+    @INPROCEEDINGS{islam2023interpreting,
+      author={Islam, Md Khairul and Liu, Yingzheng and Erkelens, Andrej and Daniello, Nick and Marathe, Aparna and Fox, Judy},
+      booktitle={2023 IEEE International Conference on Digital Health (ICDH)},
+      title={Interpreting County-Level COVID-19 Infections using Transformer and Deep Learning Time Series Models},
+      year={2023},
+      pages={266-277},
+      doi={10.1109/ICDH60066.2023.00046}
+  </p>
+
+  
+
+
+        <!--End Text with Images and Image buttons-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text around Image-->
+        
+        <!--End Text around Image-->
+        <!-------------------------------------------------------------------------------------------->
+      
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Centered Image and Table-->
+        
+        <!--End Text with Centered Image and Table-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Adaptive Image-->
+        
+        <!--End Text with Adaptive Image-->
+        <!-------------------------------------------------------------------------------------------->
+      
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Images and Videos-->
+        
+        <!--End Text with Images and Videos-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Text with Iframe-->
+        
+        <!--END Text with Iframe-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start List of Projects-->
+        
+        <!--End List of Projects-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Gallery-->
+        
+        <!--End Gallery-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Masonry-->
+        
+        <!--End Masonry-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Survey-->
+        
+        <!--End Survey-->
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Credits-->
+        <div class="flex-row">
+          <div class="flex-item flex-item-stretch flex-column">
+            <p class="text text-small text-italic add-top-margin-large">
+              Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span class="highlight-text">Organization Two</span>: Author Three and Author Four
+            </p>
+          </div>
+        </div>
+        <!--End Credits-->
+        <!-------------------------------------------------------------------------------------------->
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+</html>
