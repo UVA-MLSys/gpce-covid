@@ -77,15 +77,7 @@
     text-align: center;
   }
 
-  p{
-    
-    
-    font-family: 'Proxima Nova', sans-serif;
-    color: rgb(0, 0, 0);
-    line-height: 1.5;
-    
-    font-size: 23px;
-  }
+ 
 
 
   h1{
@@ -261,11 +253,7 @@
     color: white;
     text-align: center; 
   }
-  #INTERPRETATION p {
-    font-family: 'Proxima Nova', sans-serif;
-    color: rgb(0, 0, 0);
-     
-  }
+
   
 /*   
   .row {

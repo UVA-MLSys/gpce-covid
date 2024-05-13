@@ -128,7 +128,7 @@ function drawLineGraph(data) {
 
   legendEntries.append('text')
       .attr('x', 15)
-      .attr('y', 10)
+      .attr('y', 15)
       .text(d => d.label);
 
 // Create a line generator

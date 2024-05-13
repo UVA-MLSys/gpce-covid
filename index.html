@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  
+
   <div class="menu-container"></div>
   <div class="content-container">
     <!-------------------------------------------------------------------------------------------->
@@ -44,6 +46,8 @@
     <!--End Header-->
     <!-------------------------------------------------------------------------------------------->
     <div class="content">
+      <div class="extracontent">
+      <img src="img/nsflogo.png"  style="position: absolute; top: 10; left: 0; width: 100px; height: 100px;">
       <div class="content-table flex-column">
         <!-------------------------------------------------------------------------------------------->
         <!--Start Intro-->
@@ -52,10 +56,12 @@
         <!--End Intro-->
         <!-------------------------------------------------------------------------------------------->
         <!--Start Text Only-->
+        
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 id="text-only">Introduction</h2>
+            <h2 class=customh2 id="text-only">Introduction</h2>
             <hr>
+
             <p class="text">
               In this work, we utilize the Temporal Fusion Transformer (TFT) 
               to achieve state-of-the-art performance in forecasting US county-level 
@@ -68,6 +74,53 @@
               extended to other datasets at the community level, as exemplified in the characteristics (e.g. population, health status, and 
               socioeconomic factors).
             </p>
+
+
+            <h2>Interactive Graph</h2>
+            <head>
+              <!-- <style>
+              .dot {
+                  fill: steelblue;
+                  r: 5;
+                }
+              </style> -->
+            
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+              
+              <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+              <link rel = "stylesheet" href="static/gpce.css">
+              <!-- <link href='https://fonts.googleapis.com/css2?family=Lora&display=swap'rel="stylesheet"> -->
+              <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+              <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+              <script src="https://d3js.org/d3.v7.min.js"></script>
+              <script src="https://d3js.org/d3-array.v2.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+              <script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+              <script src="https://unpkg.com/topojson@3.0.0/dist/topojson.min.js"></script>
+            </head>
+            <section id="INTERPRETATION" class="interact">
+                <div id="interactive" style="width: 80%; background-color: white; height: 1500px">
+                  <p>Click counties on the below U.S. map to see how our model captures spatial patterns across urban and rural counties. Or Type in the County Name and State Name to see the one you are interested in!
+                    please be in the format of {State, County} e.g: Virginia, Madison
+                  </p>
+                  <div id="control-viz"> 
+                    <input id="CountyName-input" style=" position: absolute; left: 40%; transform: translateX(50%);" placeholder="State, County"> 
+                    <button id="heatmap" style=" position: absolute; left: 40%; transform: translateX(-50%);" onclick="toggleHeatmap()"> HeatMap of Cases</button>
+                  </div>
+                  <svg id="d3-map" style="margin-bottom:10px"> </svg>
+                  <p id="county-name" style="margin-left: 110px;"> </p>
+                  <svg id="d3-interactive" style="width:1000px; height:800px; margin-left:120px"></svg>
+                  <div class="tooltip" id="county-tooltip" ></div>
+                  <p id="placeholder" style="display:none"> </p>
+                </div>
+              </section>
+            
+            
+            
+              <script src="static/gpce.js"> </script>
+         
+
+
 
             <h2 id="text-only">Folder Structure</h2>
             <ul>
@@ -98,13 +151,13 @@
             </ul>
 
 
-            <h2 id="text-only">Results</h2>
-            <p class="text">
+           
+            <!--<p class="text">
               Click the link below to view an interactive graph of the results for 3,142 US counties.
             </p>
-            <a class="link" href="embedding.html">Link to Interactive Graph</a>
+            <a class="link" href="embedding.html">Link to Interactive Graph</a>-->
             
-            <h3>Ground Truth and Benchmark</h3>
+            
 
             
 
@@ -123,6 +176,9 @@
         <!-------------------------------------------------------------------------------------------->
         <!--Start Text with Images and Image buttons-->
 
+        <h2 id="text-only">Results</h2>
+        <h3>Ground Truth and Benchmark</h3>
+        
         <div class="flex-row">
           <div class="flex-item flex-column">
             <h2 id="images-and-image-button"></h2>
@@ -132,16 +188,16 @@
             </p>
           </div>
         </div>
-        <div class="flex-row-space-between">
+        <div class="flex-row-space-between2">
           <div class="flex-item flex-column">
-            <img class="image max-width-400" src="img/ground_truth.jpg">
-            <p class="image-caption">Ground Truth</p>
+            <img class="standardimage3" src="img/ground_truth.jpg">
+            <p class="image-caption" style="margin-left: 100px;" >Ground Truth</p>
           </div>
           <div class="flex-item flex-column">
             
               <img class=customimage3 src="img/Test_comparison.jpg">
             </a>
-            <p class="customimage-caption">Test result comparison of TFT with 
+            <p class="customimage-caption" style="margin-left: 60px;">Test result comparison of TFT with 
             five other deep learning models.</p>
           </div>
         </div>
@@ -169,10 +225,10 @@
             </p>
           </div>
         </div>
-        <div class="flex-row-space-between">
+        <div class="flex-row-space-between2">
           <div class="flex-item flex-column">
             <img class="customimage4" src="img/Train_attention.jpg">
-            <p class="customimage-caption">
+            <p class="customimage-caption" style="margin-left: 100px;">
               Attention weights aggregated by past time index showing 
               high importance in the `same day the 
               previous week` (position index -7).</p>
@@ -180,7 +236,7 @@
           <div class="flex-item flex-column">
               <img class="customimage2" src="img/seasonal_pattern.jpg">
             </a>
-            <p class="customimage-caption">
+            <p class="customimage-caption" style="margin-left: 60px;">
               Weekly `seasonality` due to reporting calculated 
               using auto-correlation at different lag 
               days $k \in [1, 21]$. Our analysis shows a 
@@ -223,16 +279,17 @@
     </p>
   </div>
 </div>
-<div class="flex-row-space-between">
+<div class="flex-row-space-between2">
   <div class="flex-item flex-column">
-    <img class="image max-width-400" src="img/cases_quantiles.jpg">
-    <p class="image-caption">Cumulative COVID-19 cases across US counties</p>
+    <img class="standardimage1" src="img/cases_quantiles.jpg">
+    <p class="image-caption" style="margin-left: 80px;">Cumulative COVID-19 cases across US counties</p>
   </div>
   <div class="flex-item flex-column">
-    <a href="https://github.com/yenchiah/project-website-template" target="_blank" class="image max-width-400">
-      <img src="img/attention_quantiles.jpg">
+    <a href="https://github.com/yenchiah/project-website-template" target="_blank" class="standardimage2">
+      
+      <img class="standardimage2" src="img/attention_quantiles.jpg">
     </a>
-    <p class="image-caption">Avg. attention weights across US counties from TFT</p>
+    <p class="image-caption" style="margin-left: 100px;">Avg. attention weights across US counties from TFT</p>
   </div>
 </div>
 <div class="flex-row">
@@ -402,13 +459,15 @@
         <div class="flex-row">
           <div class="flex-item flex-item-stretch flex-column">
             <p class="text text-small text-italic add-top-margin-large">
-              Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span class="highlight-text">Organization Two</span>: Author Three and Author Four
+             <!-- Credits: <span class="highlight-text">Organization One</span>: Author One and Author Two / <span class="highlight-text">Organization Two</span>: Author Three and Author Four -->
             </p>
           </div>
         </div>
         <!--End Credits-->
         <!-------------------------------------------------------------------------------------------->
       </div>
+      
+    </div>
     </div>
     
   </div>
