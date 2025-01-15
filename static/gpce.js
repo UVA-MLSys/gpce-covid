@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
   //updateLineGraph("SaltLake");
   drawmap();
+  const albemarle = "51003"; 
+  updateLineGraph(albemarle);
+  const countyElement = d3.select(`path[FIPS="${51003}"]`);
+  countyElement.node().classList.add("active");
+  
+
+ 
+
+  
+
 })
 
 
@@ -96,7 +106,11 @@ function drawLineGraph(data) {
     const xAxis = d3.axisBottom(xScale);
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll("text") 
+      .style("font-size", "13px") 
+      .style("font-weight", "bold") 
+      .style("fill", "black"); 
 
     // Create y-axis
     const yAxis = d3.axisLeft(yScale);
@@ -112,7 +126,7 @@ function drawLineGraph(data) {
 
   const legendGroup = svg.append('g')
       .attr('class', 'legend')
-      .attr('transform', `translate(${width - 100}, 0)`);
+      .attr('transform', `translate(${width - 790}, 0)`);
 
   const legendEntries = legendGroup.selectAll('.legend-entry')
       .data(legendItems)
@@ -143,6 +157,7 @@ const predictedLine = d3.line()
     .attr('d', predictedLine)
     .attr('fill', 'none') // Remove any fill
     .attr('stroke', 'red') // Customize the color for the actual cases;
+    .attr('stroke-width', 3)
 
   // Create a line generator for the actual cases
   const actualLine = d3.line()
@@ -156,6 +171,7 @@ const predictedLine = d3.line()
       .attr('d', actualLine)
       .attr('fill', 'none') // Remove any fill
       .attr('stroke', 'blue') // Customize the color for the actual cases;
+      .attr('stroke-width', 3)
 }
 
 
@@ -190,7 +206,9 @@ function ready(data){
   .attr("d",path)
   .attr("FIPS", function(d) {
     return d.id; // Assuming FIPS is a property in the data object
+    
   })
+  
   .on("click", function () {
     // Your onclick event handler code goes here
     document.querySelectorAll('.county').forEach(county => county.classList.remove('active'));
@@ -210,10 +228,10 @@ function ready(data){
 function showTooltip(countyState, x, y) {
   const tooltip = d3.select("#county-tooltip");
 
-  tooltip.style("left", x + "px")
-    .style("top", y + "px")
+  tooltip
     .style("display", "block")
     .text(countyState);
+
 }
 
 function hideTooltip() {

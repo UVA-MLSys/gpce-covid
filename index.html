@@ -99,7 +99,7 @@
               <script src="https://unpkg.com/topojson@3.0.0/dist/topojson.min.js"></script>
             </head>
             <section id="INTERPRETATION" class="interact">
-                <div id="interactive" style="width: 80%; background-color: white; height: 1500px">
+                <div id="interactive" style="width: 80%; background-color: white; height: 850px">
                   <p>Click counties on the below U.S. map to see how our model captures spatial patterns across urban and rural counties. Or Type in the County Name and State Name to see the one you are interested in!
                     please be in the format of {State, County} e.g: Virginia, Madison
                   </p>
@@ -108,9 +108,14 @@
                     <button id="heatmap" style=" position: absolute; left: 40%; transform: translateX(-50%);" onclick="toggleHeatmap()"> HeatMap of Cases</button>
                   </div>
                   <svg id="d3-map" style="margin-bottom:10px"> </svg>
-                  <p id="county-name" style="margin-left: 110px;"> </p>
+                </div>
+                  <p class="text" style="width: 100%;">This interactive map is based on the findings of the paper "Interpreting County Level COVID-19 Infection and Feature Sensitivity using Deep Learning Time Series Models." The map visualizes COVID-19 case predictions at the county level across the United States, generated using a state-of-the-art machine learning model called the Temporal Fusion Transformer (TFT). The TFT model was trained on over two years of data, incorporating both static factors (e.g., demographics, socioeconomic conditions) and dynamic factors
+                     (e.g., vaccination rates, mobility patterns) to forecast daily infection trends. By selecting a county on the map or entering its name, you can explore how the model's predictions compare to actual reported cases over time. This visualization not only highlights the accuracy of the model but also provides insights into spatial patterns of COVID-19 spread across urban and rural areas. The tool aims to demonstrate how 
+                     advanced machine learning techniques can be applied to public health challenges, offering both predictive power and interpretability for data-driven decision-making.</p>
+                   <div id="interactive" style="width: 80%; background-color: white; height: 500px">
+                  <p id="county-name" style="margin-left: 110px; font-size: 24px; font-weight: bold;"> </p>
                   <svg id="d3-interactive" style="width:1000px; height:800px; margin-left:120px"></svg>
-                  <div class="tooltip" id="county-tooltip" ></div>
+                  <div class="tooltip" id="county-tooltip" style="font-size: 18px; position: absolute; top: 570px; left: 760px; font-weight: bold;"></div>
                   <p id="placeholder" style="display:none"> </p>
                 </div>
               </section>
@@ -122,7 +127,19 @@
 
 
 
-            <h2 id="text-only">Folder Structure</h2>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+              <h2 id="text-only">Folder Structure</h2>
             <ul>
               <li><strong>Archives</strong>: Unused codes.</li>
               <li><strong>dataset_raw</strong>: Contains the collected raw dataset and the supporting files. To update use the <a href="/dataset_raw/Update%20dynamic%20features.ipynb">Update dynamic dataset</a> notebook. The static dataset is already updated till the onset of COVID-19 using <a href="/dataset_raw/Update%20static%20features.ipynb">Update static dataset</a> notebook.</li>
