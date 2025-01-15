@@ -103,7 +103,8 @@ function drawLineGraph(data) {
       .range([height, 0]);
 
     // Create x-axis
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale)
+      .tickFormat(d3.timeFormat("%a %d"));
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
       .call(xAxis)
@@ -223,6 +224,11 @@ function ready(data){
     // Hide the tooltip box when moving the mouse out of a county
     hideTooltip();
   });
+
+  const albemarleCounty = d3.select('path[FIPS="51003"]');
+  if (!albemarleCounty.empty()) {
+    albemarleCounty.classed("active", true);
+  }
 }
 
 function showTooltip(countyState, x, y) {
